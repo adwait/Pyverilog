@@ -1,3 +1,7 @@
 *.pyc
 *.out
 parsetab.py
+
+build/
+dist/
+pyverilog.egg-info/

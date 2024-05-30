@@ -62,7 +62,9 @@ class VerilogDataflowWalker(VerilogDataflowMerge):
             nptr = None
             if self.getTermDims(termname) is not None:
                 if ptr is None:
-                    raise verror.FormatError('Array variable requires an pointer.')
+                    # Ignore missing pointer: will lead to error in downstream task
+                    return tree
+                    # raise verror.FormatError('Array variable requires an pointer.')
                 if msb is not None and lsb is not None:
                     return tree
                 nptr = ptr
